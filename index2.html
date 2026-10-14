@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>ClassicBox</title>
+        <link rel="icon" href="favico.png">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="cablecore.js"></script>
+        <script src="channels.js"></script>
+        <script>
+            onload = function() {
+                channels = getchannels();
+                cururl = getcurpath()
+                curpos = getpos(cururl);
+                setnav(curpos);
+                getdb(curpos);
+                addiframe(cururl);
+                var timerID = setInterval(function () {
+                    maxsize(1);
+                    getdb(curpos);
+                }, 60 * 1);
+                setnav(curpos);
+                setTimeout(function() {
+                infoboxctr(2)
+            }, 3000);
+                setInterval(function() {
+                    window.location.reload();
+                }, 3600000);
+            }
+        </script>
+    </head>
+    <body>
+        </div>
+        <div id="addhere"></div>
+        <div class="infoboxtrig" id="infoboxtrig" onmouseover="infoboxctr(1)"></div>
+        <div class="infobox" id="infobox" onmouseleave="infoboxctr(2)">
+            <h1 id="channelname">00 CHN</h1>
+            <h2 id="channeldesc">No Information available</h2>
+            <h3>
+                <a class="navico" id="goup" href="index.html" onclick="perf(1)" style="text-shadow: black 1px 0 10px;">△</a>
+                <a class="navico" id="godown" href="index.html" onclick="perf(2)" style="text-shadow: black 1px 0 10px;">▽</a>
+                <a class="navico" href="index5.html" id="guidebutt">Guide</a>
+            </h3>
+        </div>
+        <div class="crt"></div>
+    </body>
+</html>

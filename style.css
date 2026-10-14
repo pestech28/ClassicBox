@@ -1,0 +1,50 @@
+@font-face {
+	font-family: "main";
+	src: url("main.ttf");
+}
+
+
+body {
+    background-color: rgb(0,0,0);
+    font-family: main, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.infoboxtrig {
+    width: 100%;
+    height: 25px;
+    background-color: rgba(0,0,0,0);
+    position: absolute;
+    bottom: 0;
+}
+
+.infobox {
+    width: 100%;
+    height: 200px;
+    background-color: rgb(0,0,255);
+    background-image: url(gdbox.png);
+    background-repeat: none;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    font-family: main, Arial, Helvetica, sans-serif;
+    color: white;
+    padding-left: 28px;
+}
+
+.navico {
+    color: white;
+    text-decoration: none;
+    font-family: main, Arial, Helvetica, sans-serif;
+    text-shadow: black 1px 0 10px;
+}
+
+.chanposbox {
+    position: fixed;
+    width: 128px;
+    height: 128px;
+    right: 0;
+    text-align: center;
+}

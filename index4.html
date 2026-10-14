@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>ClassicBox</title>
+    <link rel="icon" href="favico.png">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="cablecore.js"></script>
+    <script src="channels.js"></script>
+    <script>
+        onload = function () {
+            channels = getchannels();
+            curpos = channels.length;
+            curpos = curpos - 2;
+            document.location = channels[curpos];
+        }
+    </script>
+</head>
+<body>
+    <div class="crt"></div>
+</body>
+</html>

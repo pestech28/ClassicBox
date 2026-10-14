@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>ClassicBox</title>
+    <link rel="icon" href="favico.png">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="guide.css" />
+    <script src="guidecore.js"></script>
+    <script src="channels.js"></script>
+    <script>
+        onload = function () {
+            channels = getchannels();
+            cururl = getcurpath();
+            curpos = getpos(cururl);
+            getdb(curpos);
+            addprev();
+            addclock();
+            addguide();
+            setInterval(function() {
+                    addclock();
+                }, 1800000);
+        }
+    </script>
+</head>
+<body>
+    <div class="uia">
+        <h1 class="channelname" id="channelname">CHN</h1>
+        <h2 class="channeldesc" id="channeldesc">No Information available</h2>
+    </div>
+    <div class="uib" id="uib"></div>
+    <table class="timebox">
+        <tbody>
+            <tr>
+                <td style="width: 5.5%;">Today</td>
+                <td id="time1">0:00</td>
+                <td id="time2">0:00</td>
+                <td id="time3">0:00</td>
+                <td id="time4">0:00</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="channellist">
+        <tbody id="channelbox">
+            <tr>
+                <td class="channamebox">1<br>CHN</td>
+                <td class="chandescbox">No Information available</td>
+            </tr>
+            <tr>
+                <td class="channamebox">2<br>CHN</td>
+                <td class="chandescbox">No Information available</td>
+            </tr>
+            <tr>
+                <td class="channamebox">3<br>CHN</td>
+                <td class="chandescbox">No Information available</td>
+            </tr>
+            <tr>
+                <td class="channamebox">4<br>CHN</td>
+                <td class="chandescbox">No Information available</td>
+            </tr>
+            <tr>
+                <td class="channamebox">5<br>CHN</td>
+                <td class="chandescbox">No Information available</td>
+            </tr>
+            <tr>
+                <td class="channamebox">6<br>CHN</td>
+                <td class="chandescbox">No Information available</td>
+            </tr>
+            <tr>
+                <td class="channamebox">7<br>CHN</td>
+                <td class="chandescbox">No Information available</td>
+            </tr>
+            <tr>
+                <td class="channamebox">8<br>CHN</td>
+                <td class="chandescbox">No Information available</td>
+            </tr>
+            <tr>
+                <td class="channamebox">9<br>CHN</td>
+                <td class="chandescbox">No Information available</td>
+            </tr>
+            <tr>
+                <td class="channamebox">10<br>CHN</td>
+                <td class="chandescbox">No Information available</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

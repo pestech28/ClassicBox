@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>ClassicBox</title>
+    <link rel="icon" href="favico.png">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="cablecore.js"></script>
+    <script src="channels.js"></script>
+    <script>
+        onload = function () {
+            channels = getchannels();
+            cururl = getcurpath();
+            curpos = getpos(cururl);
+            setnav(curpos);
+            getdb(curpos);
+            var timerID = setInterval(function () {
+                maxsize(1);
+            }, 60 * 1);
+            setTimeout(function() {
+                infoboxctr(2)
+            }, 3000);
+            setInterval(function() {
+                window.location.reload();
+            }, 3600000);
+            const video = document.getElementById('video');
+            let videoSrc = cururl;
+
+            if (Hls.isSupported()) {
+                const hls = new Hls();
+                hls.loadSource(videoSrc);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                    video.play();
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = videoSrc;
+                video.addEventListener('loadedmetadata', function () {
+                    video.play();
+                });
+                video.addEventListener('error', function () {
+                    alert('connection error');
+                });
+            } else {
+                alert('connection error');
+            }
+            setnav(curpos);
+        };
+    </script>
+</head>
+<body>
+    <video id="video" autoplay></video>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+    <div class="infoboxtrig" id="infoboxtrig" onmouseover="infoboxctr(1)"></div>
+    <div class="infobox" id="infobox" onmouseleave="infoboxctr(2)">
+        <h1 id="channelname">00 CHN</h1>
+            <h2 id="channeldesc">No Information available</h2>
+        <h3>
+            <a class="navico" id="goup" href="index.html" onclick="perf(1)">△</a>
+            <a class="navico" id="godown" href="index.html" onclick="perf(2)">▽</a>
+            <a class="navico" href="index5.html" id="guidebutt">Guide</a>
+        </h3>
+    </div>
+    <div class="crt"></div>
+</body>
+</html>
